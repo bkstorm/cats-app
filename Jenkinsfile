@@ -10,15 +10,14 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Building...'
-        // nodejs('Node-18.16.0') {
           sh 'npm install'
           sh 'npm run build'
-        // }
       }
     }
     stage('Test') {
       steps {
         echo 'Testing...'
+        sh 'npm run test'
       }
     }
     stage('Deploy') {
